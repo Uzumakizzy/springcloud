@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: microservice-movie
+server:
+  port: 9002
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka
+    # 提供方获取注册信息的间隔时间
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+feign:
+  hystrix:
+    enabled: true  # 开启Feign的熔断器功能
